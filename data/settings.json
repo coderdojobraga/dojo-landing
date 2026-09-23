@@ -1,0 +1,30 @@
+{
+  "navItems": [
+    {
+      "id": "curriculum",
+      "label": "Currículo",
+      "path": "https://coderdojobraga.notion.site/Renova-o-do-Curr-culo-592035160b3f4b259d896fe15014fc7a?p=de8c1062cc074a228aa363616f974e4c&pm=c",
+      "enabled": true
+    },
+    {
+      "id": "recruitment",
+      "label": "Recrutamento",
+      "path": "/recruitment",
+      "enabled": true
+    },
+    {
+      "id": "team",
+      "label": "Equipa",
+      "path": "/team",
+      "enabled": true
+    },
+    {
+      "id": "faqs",
+      "label": "Faqs",
+      "path": "/faqs",
+      "enabled": false
+    }
+  ],
+  "curriculumDestination": "notion",
+  "notionCurriculumUrl": "https://coderdojobraga.notion.site/Renova-o-do-Curr-culo-592035160b3f4b259d896fe15014fc7a?p=de8c1062cc074a228aa363616f974e4c&pm=c"
+}

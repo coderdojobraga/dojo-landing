@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Bankai";
+  src: url("/fonts/bankai/bankai.otf") format("opentype");
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-primary: #722ED1;
+  --color-dark: #343434;
+  --color-altdark: #262626;
+  --color-orange: #ed684a;
+  --font-bankai: "Bankai", sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #171717;
+  background-color: #ffffff;
+  overflow-x: hidden;
 }
+
+/* Landing background decorative curves */
+.landing-curves-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.landing-rectangle::before {
+  content: "";
+  position: absolute;
+  z-index: -4;
+  width: 100vw;
+  height: 9999px;
+  background-color: #343434;
+  transform: translate(0, -100%);
+}
+
+.landing-rectangle::after {
+  content: "";
+  position: absolute;
+  z-index: -4;
+  width: 100vw;
+  height: 9999px;
+  background-color: #343434;
+}
+
+.landing-curve-top {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 9999px;
+  border-radius: 9999px;
+  background-color: white;
+  transform: translateY(-100%);
+}
+
+.landing-curve-bottom {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 9999px;
+  border-radius: 9999px;
+  background-color: #343434;
+}
+
+@media (min-width: 1230px) {
+  .landing-curve-top,
+  .landing-curve-bottom {
+    width: calc(100vw + (100vw - 1230px) / 4);
+  }
+}
+
