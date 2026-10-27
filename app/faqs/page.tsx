@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { FAQS } from "@/data/faqs";
 import FaqAccordion from "@/components/faqs/FaqAccordion";
-import { isRouteEnabled } from "@/lib/settings";
+import { isNavItemEnabled } from "@/lib/settings";
 
 export const metadata: Metadata = {
   title: "FAQs | CoderDojo Braga",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function FaqsPage() {
-  if (!isRouteEnabled("/faqs")) {
+  if (!isNavItemEnabled("faqs")) {
     redirect("/");
   }
 

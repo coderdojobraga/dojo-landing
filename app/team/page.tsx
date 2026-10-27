@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { TEAM_MEMBERS } from "@/data/team";
 import MemberCard from "@/components/team/MemberCard";
-import { isRouteEnabled } from "@/lib/settings";
+import { isNavItemEnabled } from "@/lib/settings";
 
 export const metadata: Metadata = {
   title: "Equipa | CoderDojo Braga",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function TeamPage() {
-  if (!isRouteEnabled("/team")) {
+  if (!isNavItemEnabled("team")) {
     redirect("/");
   }
 

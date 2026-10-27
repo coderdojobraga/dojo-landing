@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import MentorSection from "@/components/recruitment/MentorSection";
 import CommunicationSection from "@/components/recruitment/CommunicationSection";
 import DeveloperSection from "@/components/recruitment/DeveloperSection";
-import { isRouteEnabled } from "@/lib/settings";
+import { isNavItemEnabled } from "@/lib/settings";
 
 export const metadata: Metadata = {
   title: "Recrutamento | CoderDojo Braga",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function RecruitmentPage() {
-  if (!isRouteEnabled("/recruitment")) {
+  if (!isNavItemEnabled("recruitment")) {
     redirect("/");
   }
 

@@ -4,7 +4,7 @@ import { BELTS } from "@/data/curriculum";
 import BeltCard from "@/components/curriculum/BeltCard";
 import {
   getSiteSettings,
-  isRouteEnabled,
+  isNavItemEnabled,
   NOTION_CURRICULUM_URL,
 } from "@/lib/settings";
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function CurriculumPage() {
   const settings = getSiteSettings();
 
-  if (!isRouteEnabled("/curriculum", settings)) {
+  if (!isNavItemEnabled("curriculum", settings)) {
     redirect("/");
   }
 

@@ -160,15 +160,14 @@ export function updateCurriculumDestination(
 }
 
 /**
- * Checks whether a given path is currently enabled.
- * If the path is not one of the managed routes, returns true.
+ * Checks whether a nav item is currently enabled.
+ * Looks up by id, not path: the curriculum item's path is swapped for the
+ * Notion URL when that destination is selected.
+ * If the id is not one of the managed items, returns true.
  */
-export function isRouteEnabled(
-  pathname: string,
-  settings?: SiteSettings,
-): boolean {
+export function isNavItemEnabled(id: string, settings?: SiteSettings): boolean {
   const currentSettings = settings || getSiteSettings();
-  const match = currentSettings.navItems.find((item) => item.path === pathname);
+  const match = currentSettings.navItems.find((item) => item.id === id);
   if (!match) {
     return true;
   }
