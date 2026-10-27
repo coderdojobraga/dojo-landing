@@ -25,22 +25,6 @@ export default function DeveloperSection() {
 
             <div className="mt-6 flex flex-wrap gap-4">
               <a
-                href="https://github.com/coderdojobraga/shuriken"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-7 py-3 text-base font-semibold text-white shadow-md shadow-purple-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-purple-700 hover:shadow-lg"
-              >
-                Shuriken
-              </a>
-              <a
-                href="https://github.com/coderdojobraga/bokken"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-7 py-3 text-base font-semibold text-white shadow-md shadow-purple-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-purple-700 hover:shadow-lg"
-              >
-                Bokken
-              </a>
-              <a
                 href="https://forms.gle/iEjGdnxfGYbk9rFy6"
                 target="_blank"
                 rel="noopener noreferrer"
