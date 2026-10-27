@@ -14,10 +14,13 @@ export default function MentorSection() {
               Queres ser Mentor?
             </h2>
             <p className="mt-4 text-base sm:text-lg leading-relaxed text-gray-700">
-              Os Mentores são o coração do CoderDojo Braga. Sem eles, não há sessões e não há ninjas a aprender a programar.
+              Os Mentores são o coração do CoderDojo Braga. Sem eles, não há
+              sessões e não há ninjas a aprender a programar.
             </p>
             <p className="mt-3 text-base sm:text-lg leading-relaxed text-gray-700">
-              Ao seres mentor, não só estás a ter um impacto positivo na vida dos ninjas, como estás a desenvolver as tuas <i>soft skills</i>, nomeadamente a forma como comunicas com os outros.
+              Ao seres mentor, não só estás a ter um impacto positivo na vida
+              dos ninjas, como estás a desenvolver as tuas <i>soft skills</i>,
+              nomeadamente a forma como comunicas com os outros.
             </p>
             <div className="mt-6">
               <a
@@ -46,7 +49,11 @@ export default function MentorSection() {
         <div className="mx-auto mt-16 max-w-3xl text-center">
           <span className="text-5xl font-bold text-primary">&ldquo;</span>
           <p className="-mt-4 text-lg leading-relaxed text-gray-800 sm:text-xl font-medium">
-            Enquanto alguém que tem uma enorme paixão por tecnologia, ser mentor permite-me ser o veículo de aprendizagem para jovens que partilham dessa paixão, algo que me realiza particularmente. Além disso, aprendi muito e continuo a aprender com aqueles que já cá estavam e me receberam de braços abertos.
+            Enquanto alguém que tem uma enorme paixão por tecnologia, ser mentor
+            permite-me ser o veículo de aprendizagem para jovens que partilham
+            dessa paixão, algo que me realiza particularmente. Além disso,
+            aprendi muito e continuo a aprender com aqueles que já cá estavam e
+            me receberam de braços abertos.
           </p>
           <span className="text-5xl font-bold text-primary">&rdquo;</span>
           <p className="mt-2 text-sm sm:text-base font-semibold text-gray-600">

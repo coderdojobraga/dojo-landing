@@ -10,7 +10,7 @@ Please make sure to read and follow our [Code of Conduct](CODE_OF_CONDUCT.md) in
 
 To run this project locally, you need:
 
-- **[Bun](https://bun.sh/)** or other JS package manager and runtime 
+- **[Bun](https://bun.sh/)** or other JS package manager and runtime
 - **Git**
 
 ---
@@ -18,12 +18,14 @@ To run this project locally, you need:
 ## 🔧 Setup & Local Development
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/coderdojobraga/kunai.git
    cd kunai
    ```
 
 2. **Install dependencies:**
+
    ```bash
    bun install
    # or: npm install
@@ -31,9 +33,11 @@ To run this project locally, you need:
 
 3. **Configure environment variables (optional):**
    If you need to access the `/backoffice` administration panel:
+
    ```bash
    cp env.example .env
    ```
+
    Edit `.env` to set your desired `BACKOFFICE_PASSWORD` and `BACKOFFICE_SECRET`.
 
 4. **Start the development server:**

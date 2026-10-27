@@ -38,7 +38,7 @@ async function getClientIp(): Promise<string> {
  */
 export async function loginAction(
   _prevState: ActionResponse | null,
-  formData: FormData
+  formData: FormData,
 ): Promise<ActionResponse> {
   const password = formData.get("password") as string;
   if (!password) {
@@ -50,7 +50,9 @@ export async function loginAction(
   // Check rate limiting
   const rateLimitStatus = checkRateLimit(clientIp);
   if (!rateLimitStatus.allowed) {
-    const minutes = Math.ceil((rateLimitStatus.remainingLockoutSeconds || 0) / 60);
+    const minutes = Math.ceil(
+      (rateLimitStatus.remainingLockoutSeconds || 0) / 60,
+    );
     return {
       error: `Demasiadas tentativas falhadas. Bloqueado por mais ${minutes} minuto(s).`,
     };
@@ -62,7 +64,8 @@ export async function loginAction(
     const failRecord = recordFailedAttempt(clientIp);
     if (failRecord.isLocked) {
       return {
-        error: "Demasiadas tentativas incorretas. O teu acesso foi temporariamente bloqueado durante 15 minutos.",
+        error:
+          "Demasiadas tentativas incorretas. O teu acesso foi temporariamente bloqueado durante 15 minutos.",
       };
     }
     return { error: "Palavra-passe incorreta." };
@@ -91,7 +94,10 @@ export async function logoutAction(): Promise<void> {
 /**
  * Toggle a navigation item's visibility and route availability.
  */
-export async function toggleNavAction(id: string, enabled: boolean): Promise<ActionResponse> {
+export async function toggleNavAction(
+  id: string,
+  enabled: boolean,
+): Promise<ActionResponse> {
   const cookieStore = await cookies();
   const sessionToken = cookieStore.get(SESSION_COOKIE_NAME)?.value;
 
@@ -115,7 +121,7 @@ export async function toggleNavAction(id: string, enabled: boolean): Promise<Act
  */
 export async function updateCurriculumDestinationAction(
   destination: "internal" | "notion",
-  customUrl?: string
+  customUrl?: string,
 ): Promise<ActionResponse> {
   const cookieStore = await cookies();
   const sessionToken = cookieStore.get(SESSION_COOKIE_NAME)?.value;
@@ -135,4 +141,3 @@ export async function updateCurriculumDestinationAction(
     return { error: "Falha ao atualizar destino do currículo." };
   }
 }
-

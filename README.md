@@ -1,6 +1,5 @@
 # ![CoderDojoBraga Logo](./public/img/logo-lettering-light.svg)
 
-
 ## 🤝 Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
@@ -17,4 +16,3 @@ Copyright (c) 2026, CeSIUM.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE)
 file for details.
-

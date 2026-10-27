@@ -17,7 +17,8 @@ export const FAQS: IFaqItem[] = [
       "As nossas sessões têm uma organização muito prática! Começamos por receber os Ninjas e iniciamos o projeto, fazemos uma pausa para lanchar (oferecido pelo Dojo 😁), continuamos os projetos e finalizamos com um alegre encerramento.",
   },
   {
-    question: "Quero ser voluntário, o que tenho de fazer e quais são as expectativas?",
+    question:
+      "Quero ser voluntário, o que tenho de fazer e quais são as expectativas?",
     answer:
       "Para ser voluntário do Dojo deves preencher o formulário de inscrição disponível no botão 'Quero ser Voluntário' na nossa 'Home Page'. Da equipa do Dojo podes esperar um acolhimento agradável e reconfortante, uma dinâmica simples e gratificante, que permite que a experiência de todos na iniciativa seja mais do que positiva.",
   },
@@ -47,7 +48,8 @@ export const FAQS: IFaqItem[] = [
       "Não, a participação no Dojo não implica lidar com crianças, é possível ser mentor e ensinar os Ninjas e/ou colaborar como voluntário e contribuir para a gestão de toda a iniciativa (Visita a nossa página de 'Recrutamento').",
   },
   {
-    question: "Quais são as responsabilidades e conhecimentos necessários num voluntário?",
+    question:
+      "Quais são as responsabilidades e conhecimentos necessários num voluntário?",
     answer:
       "No Dojo preservamos o respeito e partilha, os conhecimentos são assegurados pela nossa equipa de formação em toda a jornada do voluntário.",
   },

@@ -24,7 +24,8 @@ export default function FaqsPage() {
         </h1>
         <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-primary" />
         <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-gray-700">
-          Aqui podes esclarecer as perguntas mais frequentes sobre o CoderDojo Braga!
+          Aqui podes esclarecer as perguntas mais frequentes sobre o CoderDojo
+          Braga!
         </p>
       </div>
 

@@ -2,11 +2,16 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { BELTS } from "@/data/curriculum";
 import BeltCard from "@/components/curriculum/BeltCard";
-import { getSiteSettings, isRouteEnabled, NOTION_CURRICULUM_URL } from "@/lib/settings";
+import {
+  getSiteSettings,
+  isRouteEnabled,
+  NOTION_CURRICULUM_URL,
+} from "@/lib/settings";
 
 export const metadata: Metadata = {
   title: "Currículo | CoderDojo Braga",
-  description: "Conhece o currículo e os cinturões de aprendizagem do CoderDojo Braga.",
+  description:
+    "Conhece o currículo e os cinturões de aprendizagem do CoderDojo Braga.",
 };
 
 export default function CurriculumPage() {
@@ -35,11 +40,15 @@ export default function CurriculumPage() {
       {/* Explanatory section */}
       <div className="mx-auto my-10 max-w-4xl rounded-2xl bg-purple-50/50 p-6 sm:p-8">
         <h2 className="flex items-center text-2xl sm:text-3xl font-bold text-gray-900">
-          <span className="mr-3 text-primary font-bold">|</span>
-          O que são os cinturões?
+          <span className="mr-3 text-primary font-bold">|</span>O que são os
+          cinturões?
         </h2>
         <p className="mt-3 text-base sm:text-lg leading-relaxed text-gray-700">
-          Ao longo do seu percurso pelo CoderDojo Braga, os ninjas recebem cinturões. À semelhança das artes marciais, os cinturões representam o conhecimento e domínio da programação que os ninjas possuem. O caminho de cada ninja é único, mas deverá sempre passar pelos fundamentos da área.
+          Ao longo do seu percurso pelo CoderDojo Braga, os ninjas recebem
+          cinturões. À semelhança das artes marciais, os cinturões representam o
+          conhecimento e domínio da programação que os ninjas possuem. O caminho
+          de cada ninja é único, mas deverá sempre passar pelos fundamentos da
+          área.
         </p>
       </div>
 

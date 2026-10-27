@@ -4,7 +4,10 @@ interface NinjaSVGProps extends SVGProps<SVGSVGElement> {
   colour?: string;
 }
 
-export default function NinjaSVG({ colour = "#efefef", ...props }: NinjaSVGProps) {
+export default function NinjaSVG({
+  colour = "#efefef",
+  ...props
+}: NinjaSVGProps) {
   const svgId = `ninja-svg-${colour.replace(/[^a-zA-Z0-9]/g, "")}`;
   return (
     <svg
