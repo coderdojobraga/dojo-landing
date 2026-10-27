@@ -19,8 +19,18 @@ export interface SiteSettings {
 
 export const DEFAULT_SETTINGS: SiteSettings = {
   navItems: [
-    { id: "curriculum", label: "Currículo", path: "/curriculum", enabled: true },
-    { id: "recruitment", label: "Recrutamento", path: "/recruitment", enabled: true },
+    {
+      id: "curriculum",
+      label: "Currículo",
+      path: "/curriculum",
+      enabled: true,
+    },
+    {
+      id: "recruitment",
+      label: "Recrutamento",
+      path: "/recruitment",
+      enabled: true,
+    },
     { id: "team", label: "Equipa", path: "/team", enabled: true },
     { id: "faqs", label: "Faqs", path: "/faqs", enabled: true },
   ],
@@ -53,7 +63,10 @@ export function getSiteSettings(): SiteSettings {
         if (item.id === "curriculum") {
           return {
             ...item,
-            path: curriculumDestination === "notion" ? notionCurriculumUrl : "/curriculum",
+            path:
+              curriculumDestination === "notion"
+                ? notionCurriculumUrl
+                : "/curriculum",
           };
         }
         return item;
@@ -82,7 +95,11 @@ export function saveSiteSettings(settings: SiteSettings): void {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
-    fs.writeFileSync(SETTINGS_FILE_PATH, JSON.stringify(settings, null, 2), "utf-8");
+    fs.writeFileSync(
+      SETTINGS_FILE_PATH,
+      JSON.stringify(settings, null, 2),
+      "utf-8",
+    );
   } catch (error) {
     console.error("Failed to save settings.json:", error);
     throw new Error("Não foi possível gravar as configurações.");
@@ -115,10 +132,11 @@ export function updateNavItem(id: string, enabled: boolean): SiteSettings {
  */
 export function updateCurriculumDestination(
   destination: "internal" | "notion",
-  customUrl?: string
+  customUrl?: string,
 ): SiteSettings {
   const currentSettings = getSiteSettings();
-  const notionUrl = customUrl || currentSettings.notionCurriculumUrl || NOTION_CURRICULUM_URL;
+  const notionUrl =
+    customUrl || currentSettings.notionCurriculumUrl || NOTION_CURRICULUM_URL;
 
   const updatedNavItems = currentSettings.navItems.map((item) => {
     if (item.id === "curriculum") {
@@ -142,12 +160,14 @@ export function updateCurriculumDestination(
 }
 
 /**
- * Checks whether a given path is currently enabled.
- * If the path is not one of the managed routes, returns true.
+ * Checks whether a nav item is currently enabled.
+ * Looks up by id, not path: the curriculum item's path is swapped for the
+ * Notion URL when that destination is selected.
+ * If the id is not one of the managed items, returns true.
  */
-export function isRouteEnabled(pathname: string, settings?: SiteSettings): boolean {
+export function isNavItemEnabled(id: string, settings?: SiteSettings): boolean {
   const currentSettings = settings || getSiteSettings();
-  const match = currentSettings.navItems.find((item) => item.path === pathname);
+  const match = currentSettings.navItems.find((item) => item.id === id);
   if (!match) {
     return true;
   }

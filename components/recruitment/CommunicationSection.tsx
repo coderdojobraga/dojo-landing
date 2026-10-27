@@ -14,10 +14,14 @@ export default function CommunicationSection() {
               Queres ajudar com Design e Marketing?
             </h2>
             <p className="mt-4 text-base sm:text-lg font-normal leading-relaxed text-purple-100">
-              O design e marketing são essenciais para o CoderDojo Braga, pois permitem expandir a nossa atuação, dando-nos a conhecer a mais pessoas, sejam novos guardiões e ninjas, ou mentores e voluntários.
+              O design e marketing são essenciais para o CoderDojo Braga, pois
+              permitem expandir a nossa atuação, dando-nos a conhecer a mais
+              pessoas, sejam novos guardiões e ninjas, ou mentores e
+              voluntários.
             </p>
             <p className="mt-3 text-base sm:text-lg font-normal leading-relaxed text-purple-100">
-              Junta-te à nossa equipa, e contribui para tornar este projeto nalgo cada vez maior e melhor.
+              Junta-te à nossa equipa, e contribui para tornar este projeto
+              nalgo cada vez maior e melhor.
             </p>
             <div className="mt-6">
               <a
@@ -47,7 +51,11 @@ export default function CommunicationSection() {
         <div className="mx-auto mt-16 max-w-3xl text-center">
           <span className="text-5xl font-bold text-purple-200">&ldquo;</span>
           <p className="-mt-4 text-lg leading-relaxed text-white sm:text-xl font-medium">
-            É realmente fantástico fazer parte de um projeto que tanto tem crescido nos últimos anos e poder ajudá-lo a chegar ainda mais longe. Integrar a equipa de Comunicação e Marketing do Dojo tem-me permitido ganhar experiência prática na minha área e aprender imenso com os restantes mentores e voluntários.
+            É realmente fantástico fazer parte de um projeto que tanto tem
+            crescido nos últimos anos e poder ajudá-lo a chegar ainda mais
+            longe. Integrar a equipa de Comunicação e Marketing do Dojo tem-me
+            permitido ganhar experiência prática na minha área e aprender imenso
+            com os restantes mentores e voluntários.
           </p>
           <span className="text-5xl font-bold text-purple-200">&rdquo;</span>
           <p className="mt-2 text-sm sm:text-base font-semibold text-purple-200">

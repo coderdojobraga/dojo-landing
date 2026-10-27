@@ -31,7 +31,10 @@ function cleanupRateLimits() {
 /**
  * Check if the given IP address is currently rate-limited.
  */
-export function checkRateLimit(ip: string): { allowed: boolean; remainingLockoutSeconds?: number } {
+export function checkRateLimit(ip: string): {
+  allowed: boolean;
+  remainingLockoutSeconds?: number;
+} {
   cleanupRateLimits();
   const record = rateLimitMap.get(ip);
   if (!record) {
@@ -50,7 +53,10 @@ export function checkRateLimit(ip: string): { allowed: boolean; remainingLockout
 /**
  * Record a failed login attempt for the given IP address.
  */
-export function recordFailedAttempt(ip: string): { isLocked: boolean; remainingLockoutSeconds?: number } {
+export function recordFailedAttempt(ip: string): {
+  isLocked: boolean;
+  remainingLockoutSeconds?: number;
+} {
   const now = Date.now();
   let record = rateLimitMap.get(ip);
 
@@ -101,11 +107,10 @@ export function verifyPassword(candidatePassword: string): boolean {
   return crypto.timingSafeEqual(candidateHash, targetHash);
 }
 
-function getAuthSecret(): string {
+function requireAuthSecret(): string {
   const secret = process.env.BACKOFFICE_SECRET;
   if (!secret) {
-    console.warn("WARNING: BACKOFFICE_SECRET is not set! Using fallback secret.");
-    return "coderdojo_insecure_fallback_secret_please_set_env";
+    throw new Error("BACKOFFICE_SECRET is not set! Refusing to sign.");
   }
   return secret;
 }
@@ -119,8 +124,11 @@ export function createSessionToken(): string {
   const nonce = crypto.randomBytes(16).toString("hex");
   const data = `${timestamp}.${nonce}`;
 
-  const secret = getAuthSecret();
-  const signature = crypto.createHmac("sha256", secret).update(data).digest("hex");
+  const secret = requireAuthSecret();
+  const signature = crypto
+    .createHmac("sha256", secret)
+    .update(data)
+    .digest("hex");
 
   return `${data}.${signature}`;
 }
@@ -151,9 +159,12 @@ export function verifySessionToken(token: string | undefined): boolean {
     return false;
   }
 
-  const secret = getAuthSecret();
+  const secret = requireAuthSecret();
   const data = `${timestampStr}.${nonce}`;
-  const expectedSignature = crypto.createHmac("sha256", secret).update(data).digest("hex");
+  const expectedSignature = crypto
+    .createHmac("sha256", secret)
+    .update(data)
+    .digest("hex");
 
   const sigBuffer = Buffer.from(signature, "hex");
   const expectedBuffer = Buffer.from(expectedSignature, "hex");

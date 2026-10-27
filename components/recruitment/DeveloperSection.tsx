@@ -14,29 +14,16 @@ export default function DeveloperSection() {
               Contribui para as plataformas Open Source do CoderDojo Braga
             </h2>
             <p className="mt-4 text-base sm:text-lg font-normal leading-relaxed text-gray-200">
-              O código-fonte destas plataformas é público, o que significa que qualquer pessoa pode ver e contribuir para as mesmas.
+              O código-fonte destas plataformas é público, o que significa que
+              qualquer pessoa pode ver e contribuir para as mesmas.
             </p>
             <p className="mt-3 text-base sm:text-lg font-normal leading-relaxed text-gray-200">
-              Ao contribuires para as nossas plataformas, estás não só a ganhar experiência profissional, como também a melhorar a qualidade do trabalho que desenvolvemos.
+              Ao contribuires para as nossas plataformas, estás não só a ganhar
+              experiência profissional, como também a melhorar a qualidade do
+              trabalho que desenvolvemos.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-4">
-              <a
-                href="https://github.com/coderdojobraga/shuriken"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-7 py-3 text-base font-semibold text-white shadow-md shadow-purple-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-purple-700 hover:shadow-lg"
-              >
-                Shuriken
-              </a>
-              <a
-                href="https://github.com/coderdojobraga/bokken"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-7 py-3 text-base font-semibold text-white shadow-md shadow-purple-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:bg-purple-700 hover:shadow-lg"
-              >
-                Bokken
-              </a>
               <a
                 href="https://forms.gle/iEjGdnxfGYbk9rFy6"
                 target="_blank"
@@ -64,7 +51,10 @@ export default function DeveloperSection() {
         <div className="mx-auto mt-16 max-w-3xl text-center">
           <span className="text-5xl font-bold text-gray-400">&ldquo;</span>
           <p className="-mt-4 text-lg leading-relaxed text-gray-200 sm:text-xl font-medium">
-            Ser voluntário no CoderDojo Braga é uma experiência muito gratificante, pois permite-me apoiar e melhorar uma organização cujas atividades têm um efeito positivo profundo e duradouro nos ninjas, mentores e voluntários que nelas participam.
+            Ser voluntário no CoderDojo Braga é uma experiência muito
+            gratificante, pois permite-me apoiar e melhorar uma organização
+            cujas atividades têm um efeito positivo profundo e duradouro nos
+            ninjas, mentores e voluntários que nelas participam.
           </p>
           <span className="text-5xl font-bold text-gray-400">&rdquo;</span>
           <p className="mt-2 text-sm sm:text-base font-semibold text-gray-400">

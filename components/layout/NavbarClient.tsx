@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { NavItemSetting } from '@/lib/settings';
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { NavItemSetting } from "@/lib/settings";
 
 interface NavbarClientProps {
   items: NavItemSetting[];
@@ -16,12 +16,12 @@ export default function NavbarClient({ items }: NavbarClientProps) {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add('overflow-hidden');
+      document.body.classList.add("overflow-hidden");
     } else {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     }
     return () => {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     };
   }, [isOpen]);
 
@@ -58,8 +58,8 @@ export default function NavbarClient({ items }: NavbarClientProps) {
                         rel={isExternal ? "noopener noreferrer" : undefined}
                         className={`text-base font-medium transition-colors duration-200 ease-in whitespace-nowrap ${
                           isActive
-                            ? 'text-primary border-b-2 border-primary/30 font-semibold'
-                            : 'text-gray-900 hover:text-primary'
+                            ? "text-primary border-b-2 border-primary/30 font-semibold"
+                            : "text-gray-900 hover:text-primary"
                         }`}
                       >
                         {item.label}
@@ -104,13 +104,13 @@ export default function NavbarClient({ items }: NavbarClientProps) {
         aria-hidden={!isOpen}
         className={`fixed inset-0 z-50 bg-white/98 px-4 py-4 text-gray-900 backdrop-blur-md transition-all duration-300 ease-in-out sm:px-8 ${
           isOpen
-            ? 'visible opacity-100 pointer-events-auto'
-            : 'invisible opacity-0 pointer-events-none'
+            ? "visible opacity-100 pointer-events-auto"
+            : "invisible opacity-0 pointer-events-none"
         }`}
       >
         <div
           className={`flex h-full w-full flex-col space-y-4 transition-transform duration-300 ease-out ${
-            isOpen ? 'translate-y-0 scale-100' : '-translate-y-1 scale-98'
+            isOpen ? "translate-y-0 scale-100" : "-translate-y-1 scale-98"
           }`}
           role="dialog"
           aria-modal={isOpen}

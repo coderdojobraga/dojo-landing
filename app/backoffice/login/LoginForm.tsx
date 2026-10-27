@@ -5,10 +5,10 @@ import { Eye, EyeOff, Lock, ShieldAlert } from "lucide-react";
 import { ActionResponse, loginAction } from "../actions";
 
 export default function LoginForm() {
-  const [state, formAction, isPending] = useActionState<ActionResponse | null, FormData>(
-    loginAction,
-    null
-  );
+  const [state, formAction, isPending] = useActionState<
+    ActionResponse | null,
+    FormData
+  >(loginAction, null);
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -44,7 +44,9 @@ export default function LoginForm() {
             type="button"
             onClick={() => setShowPassword(!showPassword)}
             className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 focus:outline-none"
-            aria-label={showPassword ? "Ocultar palavra-passe" : "Mostrar palavra-passe"}
+            aria-label={
+              showPassword ? "Ocultar palavra-passe" : "Mostrar palavra-passe"
+            }
           >
             {showPassword ? (
               <EyeOff className="h-5 w-5" />

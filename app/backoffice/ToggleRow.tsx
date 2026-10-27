@@ -18,7 +18,7 @@ export default function ToggleRow({
 }: ToggleRowProps) {
   const [enabled, setEnabled] = useState(item.enabled);
   const [destination, setDestination] = useState<"internal" | "notion">(
-    curriculumDestination
+    curriculumDestination,
   );
   const [isPending, startTransition] = useTransition();
 
@@ -52,7 +52,9 @@ export default function ToggleRow({
       {/* Top row: Label, Path, and Visibility Toggle */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <span className="text-base font-medium text-gray-900">{item.label}</span>
+          <span className="text-base font-medium text-gray-900">
+            {item.label}
+          </span>
           {item.id === "curriculum" ? (
             <span className="rounded bg-gray-100 px-2 py-0.5 text-xs font-mono text-gray-600">
               {destination === "notion" ? "Notion (externo)" : "/curriculum"}
@@ -63,7 +65,9 @@ export default function ToggleRow({
         </div>
 
         <div className="flex items-center gap-3">
-          {isPending && <Loader2 className="h-4 w-4 animate-spin text-primary" />}
+          {isPending && (
+            <Loader2 className="h-4 w-4 animate-spin text-primary" />
+          )}
           <button
             type="button"
             role="switch"
@@ -74,7 +78,9 @@ export default function ToggleRow({
               enabled ? "bg-primary" : "bg-gray-200"
             }`}
           >
-            <span className="sr-only">Alternar visibilidade de {item.label}</span>
+            <span className="sr-only">
+              Alternar visibilidade de {item.label}
+            </span>
             <span
               className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-xs ring-0 transition duration-200 ease-in-out ${
                 enabled ? "translate-x-5" : "translate-x-0"

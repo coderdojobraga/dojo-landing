@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { FAQS } from "@/data/faqs";
 import FaqAccordion from "@/components/faqs/FaqAccordion";
-import { isRouteEnabled } from "@/lib/settings";
+import { isNavItemEnabled } from "@/lib/settings";
 
 export const metadata: Metadata = {
   title: "FAQs | CoderDojo Braga",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function FaqsPage() {
-  if (!isRouteEnabled("/faqs")) {
+  if (!isNavItemEnabled("faqs")) {
     redirect("/");
   }
 
@@ -24,7 +24,8 @@ export default function FaqsPage() {
         </h1>
         <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-primary" />
         <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-gray-700">
-          Aqui podes esclarecer as perguntas mais frequentes sobre o CoderDojo Braga!
+          Aqui podes esclarecer as perguntas mais frequentes sobre o CoderDojo
+          Braga!
         </p>
       </div>
 

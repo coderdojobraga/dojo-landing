@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { TEAM_MEMBERS } from "@/data/team";
 import MemberCard from "@/components/team/MemberCard";
-import { isRouteEnabled } from "@/lib/settings";
+import { isNavItemEnabled } from "@/lib/settings";
 
 export const metadata: Metadata = {
   title: "Equipa | CoderDojo Braga",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function TeamPage() {
-  if (!isRouteEnabled("/team")) {
+  if (!isNavItemEnabled("team")) {
     redirect("/");
   }
 
@@ -24,11 +24,12 @@ export default function TeamPage() {
         </h1>
         <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-primary" />
         <p className="mx-auto mt-4 max-w-3xl text-base sm:text-lg leading-relaxed text-gray-700">
-          A equipa do CoderDojo Braga é composta por alunos voluntários de vários
-          cursos dedicados e apaixonados pelo projeto e por tecnologia. Cada um
-          traz o seu contributo único para criar uma experiência incrível para os
-          Ninjas e todos os envolvidos com o projeto. Mais do que uma equipa,
-          todos aqueles que se decidem envolver connosco encontram uma família.
+          A equipa do CoderDojo Braga é composta por alunos voluntários de
+          vários cursos dedicados e apaixonados pelo projeto e por tecnologia.
+          Cada um traz o seu contributo único para criar uma experiência
+          incrível para os Ninjas e todos os envolvidos com o projeto. Mais do
+          que uma equipa, todos aqueles que se decidem envolver connosco
+          encontram uma família.
         </p>
       </div>
 
